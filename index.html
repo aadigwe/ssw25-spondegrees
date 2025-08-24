@@ -1,9 +1,516 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ssw25|spon degrees</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Audio File Ratings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .category-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .audio-column {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .audio-player {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .value {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 5px 0;
+        }
+        .rating {
+            color: #2c3e50;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-  <h1>Modelling Degrees of Spontaneity</h1>
+    <h1>Modelling Degrees of Spontaneity in Text-to-Speech Synthesis</h1>
+    <h2>Abstract</h2>
+    <p>Binary classifications such as “read” versus “spontaneous” are commonly used to annotate datasets for expressive Text-to-Speech (TTS). However, these binary labels fail to capture the continuous nature of speaking style. Categories overlap, and there is considerable variation even within what is labelled as a single style. Although it is broadly understood that speech varies along a spontaneity spectrum, the contribution of acoustic and linguistic cues to listener perception remains unclear—making TTS a valuable tool for generating controlled stimuli to probe this variation. In this work, we investigate whether self-supervised learning (SSL) features—which demonstrate strong capabilities in capturing expressive variation—can be used to infer perceptually meaningful degrees of spontaneity from data annotated only with binary labels. These inferred degrees are then used as a training signal for a generative model, enabling it to synthesise speech with varying levels of spontaneity, from read to fully spontaneous. We evaluate our approach across two data configurations: (1) single-speaker and (2) multi-speaker. Our synthesis experiments indicate that listeners perceive differences in the degree of spontaneity, demonstrating that binary-labelled data can be leveraged to model nuanced style variation.</p>
+    Link to paper
+    <p><a href="https://www.isca-archive.org/ssw_2025/adigwe25_ssw.html" target="_blank">Link to Paper</a></p>
+    <hr>
+    <h2>Listening Test Results on perceived spontaneity ratings</h2>
+    <p>Pairwise Task for rating which out of the two sounds <em>more spontaneous</em> (Audio files sorted by perceived spontaneity)</p>
+    <p>5 participants, 70 questions, Median Time:30 mins</p>
+    <ul>
+      <li>spon0→read-aloud/recited</li>
+      <li>spon1→slightlyread-aloud/recited</li>
+      <li>spon2→ slightly spontaneous</li>
+      <li>spon3→ moderately spontaneous</li>
+      <li>spon4→ very spontaneous.</li>
+    </ul>
+    <div id="categories-container">
+        
+        <div class="category">
+            <div class="category-title">sent10_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent10_blog_spon4_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 41.1</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent10_blog_spon2_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 27.87</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent10_blog_spon3_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 13.63</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent10_blog_spon0_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 9.51</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent10_blog_spon1_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 7.88</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent15_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent15_blog_spon4_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 35.47</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent15_blog_spon3_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 24.74</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent15_blog_spon2_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 20.8</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent15_blog_spon1_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 10.37</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent15_blog_spon0_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 8.62</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent14_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent14_blog_spon2_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 48.7</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent14_blog_spon4_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 21.68</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent14_blog_spon3_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 12.51</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent14_blog_spon1_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 12.5</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent14_blog_spon0_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 4.61</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent12_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent12_blog_spon4_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 42.38</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent12_blog_spon3_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 20.47</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent12_blog_spon1_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 14.58</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent12_blog_spon2_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 12.27</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent12_blog_spon0_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 10.3</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent11_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent11_blog_spon4_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 29.96</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent11_blog_spon3_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 25.14</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent11_blog_spon2_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 25.13</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent11_blog_spon1_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 12.6</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent11_blog_spon0_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 7.18</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent08_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent08_blog_spon4_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 39.13</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent08_blog_spon3_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 31.65</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent08_blog_spon0_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 14.08</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent08_blog_spon1_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 14.07</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent08_blog_spon2_iter0.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 1.07</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            </div>
+        </div>
+        
+
+        <div class="category">
+            <div class="category-title">sent03_blog</div>
+            <div class="audio-grid">
+                
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent03_blog_spon3_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 30.71</div>
+                <div class="rating">Rating: spon3</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent03_blog_spon0_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 25.9</div>
+                <div class="rating">Rating: spon0</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent03_blog_spon4_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 18.49</div>
+                <div class="rating">Rating: spon4</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent03_blog_spon1_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 15.64</div>
+                <div class="rating">Rating: spon1</div>
+            </div>
+            
+            <div class="audio-column">
+                <div class="audio-file">
+                    <audio controls class="audio-player">
+                        <source src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucymonopilot/sent03_blog_spon2_iter1.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="value">Value: 9.25</div>
+                <div class="rating">Rating: spon2</div>
+            </div>
+            
+            </div>
+        </div>
+        
+    </div>
+    <img src="https://data.cstr.ed.ac.uk/adaeze/ssw25/pilot_listeningtest.png" alt="listeningtest_histogram">
 </body>
 </html>
