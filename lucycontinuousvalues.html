@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>spondegrees | continuous </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.0em;
+        }
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .audio-column {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .value {
+            font-weight: bold;
+            color: #27ae60;
+            margin: 5px 0;
+        }
+
+        .rating {
+            color: #2c3e50;
+            font-style: italic;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 6px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        audio {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Modelling degrees of spontaneity: continuous values</h1>
+    <p>
+        Training data is conditioned with continuous spontaneity values, typically within the range of -0.5 (very read)
+        to 0.5 (very spontaneous) per utterance.
+        <br>At inference, the following continuous values are provided along with the input text to a fine-tuned
+        single-speaker model.
+        <br>Note that the model has not seen values of -0.85 or 0.85 during training, so in these cases it is
+        extrapolating.
+    </p>
+    <h3>sent01: Machine learning is part of our products, processes, and research. But computers usually
+        don’t explain their predictions, which can cause many problems, ranging from trust issues to undetected bugs.
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent01_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent02: All interpretation methods are explained in depth and discussed critically. How do they work? What are
+        their strengths and weaknesses? How do you interpret them?</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent02_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent03: A basic understanding of machine learning and basic university-level math will help in following the
+        theory, but the intuitive explanations at the start of each chapter should be accessible without math knowledge.
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent03_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent04: Terms and conditions are a set of rules that govern the relationship between a business and its
+        customers or users.</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent04_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent05: The Deep Learning textbook is a resource intended to help students and practitioners enter the field of
+        machine learning in general and deep learning in particular.</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent05_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent06: Your final documentation needs to stay up to date.</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent06_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>sent07: Overfitting occurs when a model learns to perform well on a training data but fails to generalize to new
+        unseen data.</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Iteration</th>
+                <th>-0.85</th>
+                <th>-0.5</th>
+                <th>-0.2</th>
+                <th>0.0</th>
+                <th>0.2</th>
+                <th>0.35</th>
+                <th>0.5</th>
+                <th>0.85</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>0</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.85-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.0-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.2-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.35-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.5-iter0.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.85-iter0.wav"></audio>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.85-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon-0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.0-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.2-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.35-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.5-iter1.wav"></audio>
+                </td>
+                <td><audio controls
+                        src="https://data.cstr.ed.ac.uk/adaeze/ssw25/lucycontinuous_synthesis/Lucy_sent07_long_spon0.85-iter1.wav"></audio>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
